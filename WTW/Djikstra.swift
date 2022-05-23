@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+func djikstra(w1: String, w2: String){
+    
+}
