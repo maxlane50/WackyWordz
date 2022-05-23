@@ -176,7 +176,17 @@ struct LevelTemplate: View {
                         }
                     }
                     HStack{
-                        Rectangle().fill(Color.black)
+                        Button(action: {
+                            stepsTaken = 0
+                            curNumStars = 3
+                            curGuess = ""
+                            guesses = []
+                        }, label: {
+                            ZStack{
+                                Rectangle().fill(Color.white)
+                                Image("CircleArrow-1").resizable().frame(width: 33.0, height: 33.0)
+                            }
+                        })
                         ForEach(alphabet3, id: \.self){ letter in
                             Button(action: {
                                 curGuess += letter
