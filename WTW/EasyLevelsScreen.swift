@@ -14,7 +14,7 @@ struct EasyLevelsScreen: View {
                 HStack{
                     Spacer()
                     NavigationLink(
-                        destination: LevelTemplate(startWord: "BOOTY", endWord: "GRACE"),
+                        destination: LevelTemplate(startWord: "PLACE", endWord: "GRACE"),
                         label: {
                             ZStack{
                                 Rectangle().frame(width: 100.0, height: 100.0).foregroundColor(.white).border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: 5)

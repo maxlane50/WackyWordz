@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE249090283C5D2500574A4F /* FullWordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24908F283C5D2500574A4F /* FullWordList.swift */; };
 		CE3455142830134E0046FD70 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3455132830134E0046FD70 /* HomePage.swift */; };
 		CE34551628304FFC0046FD70 /* Djikstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE34551528304FFC0046FD70 /* Djikstra.swift */; };
 		CE345538283174CE0046FD70 /* EasyLevelsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE345537283174CE0046FD70 /* EasyLevelsScreen.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE24908F283C5D2500574A4F /* FullWordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullWordList.swift; sourceTree = "<group>"; };
 		CE3455132830134E0046FD70 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		CE34551528304FFC0046FD70 /* Djikstra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Djikstra.swift; sourceTree = "<group>"; };
 		CE345537283174CE0046FD70 /* EasyLevelsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyLevelsScreen.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				CE345537283174CE0046FD70 /* EasyLevelsScreen.swift */,
 				CE345539283275BA0046FD70 /* EasyMedHard.swift */,
 				CE34553B283293270046FD70 /* LevelTemplate.swift */,
+				CE24908F283C5D2500574A4F /* FullWordList.swift */,
 			);
 			path = WTW;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE249090283C5D2500574A4F /* FullWordList.swift in Sources */,
 				CE3455142830134E0046FD70 /* HomePage.swift in Sources */,
 				CE34553C283293270046FD70 /* LevelTemplate.swift in Sources */,
 				CE34553A283275BA0046FD70 /* EasyMedHard.swift in Sources */,
