@@ -13,31 +13,51 @@ struct EasyMedHard: View {
         ZStack{
             Color.white.ignoresSafeArea()
             VStack{
-                Spacer()
                 Image("SelectDiff").resizable().aspectRatio(contentMode: .fit).padding(.top)
                 NavigationLink(
                     destination: EasyLevelsScreen(),
                     label: {
-                        Image("EasyButton").resizable()
-                            .aspectRatio(contentMode: .fit)
+                        ZStack{
+                            Rectangle().foregroundColor(.green).cornerRadius(20).shadow(radius: 10)
+                            Text("EASY")
+                                .font(.largeTitle)
+                                .fontWeight(.heavy)
+                                .foregroundColor(Color.black)
+                        }
+                        .padding(.horizontal)
+//                        Image("EasyButton").resizable()
+//                            .aspectRatio(contentMode: .fit)
                     }
                 )
                 .padding(.horizontal)
                 NavigationLink(
                     destination: Text("Medium Levels"),
                     label: {
-                        Image("MedButton").resizable()
-                            .aspectRatio(contentMode: .fit)
+                        ZStack{
+                            Rectangle().foregroundColor(.yellow).cornerRadius(20).shadow(radius: 10)
+                            Text("MEDIUM")
+                                .font(.largeTitle)
+                                .fontWeight(.heavy)
+                                .foregroundColor(Color.black)
+                        }
+                        .padding(.horizontal)
                     }
                 ).padding(.horizontal)
                 NavigationLink(
                     destination: Text("Hard Levels"),
                     label: {
-                        Image("HardButton").resizable()
-                            .aspectRatio(contentMode: .fit)
+                        ZStack{
+                            Rectangle().foregroundColor(.red).cornerRadius(20).shadow(radius: 10)
+                            Text("HARD")
+                                .font(.largeTitle)
+                                .fontWeight(.heavy)
+                                .foregroundColor(Color.black)
+                        }
+                        .padding(.horizontal)
                     }
                 )
                 .padding(.horizontal)
+                Spacer()
                 NavigationLink(
                     destination: Text("Help Screen"),
                     label: {

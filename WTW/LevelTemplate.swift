@@ -14,7 +14,7 @@ struct LevelTemplate: View {
     var level: Int
     @State var stepsTaken = 0
     @State var showNotValid = false
-    @State var curNumStars = 2
+    @State var curNumStars = 3
     @State var curGuess = ""
     @State var guesses: [String] = []
     @State var solution = false
@@ -227,13 +227,14 @@ struct LevelTemplate: View {
                                 let validGuess = checkValidity(guess: curGuess, prev: prev)
                                 if (validGuess){
                                     guesses.append(curGuess)
+                                    stepsTaken += 1
+                                    changeNumStars()
                                     if (curGuess == endWord){
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                                             solution = true
                                         }
                                     }
                                     curGuess = ""
-                                    stepsTaken += 1
                                 }
                                 else{
                                     curGuess = ""
@@ -309,9 +310,19 @@ struct LevelTemplate: View {
             }
         }
     }
+    func changeNumStars(){
+        if (stepsTaken > 5 && stepsTaken < 8){
+            curNumStars = 2
+        }
+        else if (stepsTaken > 7){
+            curNumStars = 1
+        }
+    }
     func updateStars() -> Int{
         var starsArr = UserDefaults.standard.object(forKey: "starsArr") as? [Int] ?? []
-        starsArr[level-1] = curNumStars
+        if (starsArr[level-1] < curNumStars){
+            starsArr[level-1] = curNumStars
+        }
         UserDefaults.standard.set(starsArr, forKey: "starsArr")
         return 2
     }

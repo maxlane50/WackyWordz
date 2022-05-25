@@ -20,7 +20,7 @@ struct EasyLevelsScreen: View {
                             destination: LevelTemplate(startWord: "PAPER", endWord: "EATER", level: 1),
                             label: {
                                 ZStack{
-                                    Rectangle().frame(width: 100.0, height: 100.0).foregroundColor(.white)
+                                    Rectangle().frame(width: 100.0, height: 100.0).foregroundColor(.black)
                                     VStack{
                                         Spacer()
                                         Text("1")

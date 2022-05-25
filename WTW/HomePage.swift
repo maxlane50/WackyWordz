@@ -19,10 +19,17 @@ struct HomePage: View {
                     NavigationLink(
                         destination: EasyMedHard(),
                         label: {
-                            Image("PlayButton").resizable()
-                                .padding(.all)
-                                .frame(width: 150, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                .aspectRatio(contentMode: .fit)
+                            ZStack{
+                                Circle().foregroundColor(.black).shadow(radius: 10).frame(width: 150, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                Text("PLAY")
+                                    .font(.largeTitle)
+                                    .fontWeight(.heavy)
+                                    .foregroundColor(Color.white)
+                            }
+                            //Image("PlayButton").resizable()
+//                                .padding(.all)
+//                                .frame(width: 150, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+//                                .aspectRatio(contentMode: .fit)
                     })
                 }
             }.onAppear{
