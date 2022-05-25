@@ -11,9 +11,10 @@ import SwiftUI
 struct LevelTemplate: View {
     var startWord: String
     var endWord: String
+    var level: Int
     @State var stepsTaken = 0
     @State var showNotValid = false
-    @State var curNumStars = 3
+    @State var curNumStars = 2
     @State var curGuess = ""
     @State var guesses: [String] = []
     @State var solution = false
@@ -21,7 +22,9 @@ struct LevelTemplate: View {
     let alphabet3: [String] = ["Z","X","C","V","B","N","M"]
     let alphabet2: [String] = ["A","S","D","F","G","H","J","K","L"]
     var body: some View {
+        
         ZStack{
+            Color.white.ignoresSafeArea()
             VStack{
                 ScrollView{
                     HStack {
@@ -126,9 +129,6 @@ struct LevelTemplate: View {
                             Spacer()
                         }
                     }
-                    if (solution){
-                        
-                    }
                 }
                 ZStack{
                     Rectangle()
@@ -228,7 +228,9 @@ struct LevelTemplate: View {
                                 if (validGuess){
                                     guesses.append(curGuess)
                                     if (curGuess == endWord){
-                                        solution = true
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                                            solution = true
+                                        }
                                     }
                                     curGuess = ""
                                     stepsTaken += 1
@@ -268,9 +270,50 @@ struct LevelTemplate: View {
                             showNotValid = false
                         }
                     }
-                 }
+                }
+            }
+            if (solution){
+                VStack (spacing : 10) {
+                    ZStack{
+                        Rectangle().foregroundColor(.white)
+                        VStack{
+                            Spacer()
+                            Text("SUCCESS").font(.largeTitle)
+                                .fontWeight(.heavy)
+                                .foregroundColor(Color.black)
+                            let _ = updateStars()
+                            if (curNumStars == 3){
+                                Image("ThreeStars").resizable().aspectRatio(contentMode: .fit)
+                            }
+                            if (curNumStars == 2){
+                                Image("TwoStars").resizable().aspectRatio(contentMode: .fit)
+                            }
+                            if (curNumStars == 1){
+                                Image("OneStar").resizable().aspectRatio(contentMode: .fit)
+                            }
+                            Button(action: {
+                                solution = false
+                            }, label: {
+                                ZStack{
+                                    Rectangle().foregroundColor(.black)
+                                    Text("BACK").font(.largeTitle)
+                                        .fontWeight(.heavy)
+                                        .foregroundColor(Color.white)
+                                }
+                            })
+                        }
+                    }
+                }
+                .padding().frame(width: 250, height: 250).background(Color.green)
+                .cornerRadius(20).shadow(radius: 20 )
             }
         }
+    }
+    func updateStars() -> Int{
+        var starsArr = UserDefaults.standard.object(forKey: "starsArr") as? [Int] ?? []
+        starsArr[level-1] = curNumStars
+        UserDefaults.standard.set(starsArr, forKey: "starsArr")
+        return 2
     }
     func checkColor(guess: String) -> Color {
         if (guess == endWord){
@@ -319,6 +362,6 @@ struct LevelTemplate: View {
 
 struct LevelTemplate_Previews: PreviewProvider {
     static var previews: some View {
-        LevelTemplate(startWord: "PLATE", endWord: "PLACE")
+        LevelTemplate(startWord: "PLATE", endWord: "PLACE", level: 1)
     }
 }
