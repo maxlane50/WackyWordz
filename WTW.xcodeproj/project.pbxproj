@@ -17,6 +17,7 @@
 		CEA8F47F282AF6B300D42546 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA8F47E282AF6B300D42546 /* ContentView.swift */; };
 		CEA8F481282AF6B400D42546 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA8F480282AF6B400D42546 /* Assets.xcassets */; };
 		CEA8F484282AF6B400D42546 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA8F483282AF6B400D42546 /* Preview Assets.xcassets */; };
+		CEE63F2B2840058200E5038C /* HowToPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE63F2A2840058200E5038C /* HowToPlay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CEA8F480282AF6B400D42546 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEA8F483282AF6B400D42546 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CEA8F485282AF6B400D42546 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEE63F2A2840058200E5038C /* HowToPlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				CE345537283174CE0046FD70 /* EasyLevelsScreen.swift */,
 				CE345539283275BA0046FD70 /* EasyMedHard.swift */,
 				CE34553B283293270046FD70 /* LevelTemplate.swift */,
+				CEE63F2A2840058200E5038C /* HowToPlay.swift */,
 				CE24908F283C5D2500574A4F /* FullWordList.swift */,
 			);
 			path = WTW;
@@ -163,6 +166,7 @@
 				CE34551628304FFC0046FD70 /* Djikstra.swift in Sources */,
 				CE345538283174CE0046FD70 /* EasyLevelsScreen.swift in Sources */,
 				CEA8F47F282AF6B300D42546 /* ContentView.swift in Sources */,
+				CEE63F2B2840058200E5038C /* HowToPlay.swift in Sources */,
 				CEA8F47D282AF6B300D42546 /* WTWApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

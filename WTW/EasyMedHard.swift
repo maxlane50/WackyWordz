@@ -13,7 +13,7 @@ struct EasyMedHard: View {
         ZStack{
             Color.white.ignoresSafeArea()
             VStack{
-                Image("SelectDiff").resizable().aspectRatio(contentMode: .fit).padding(.top)
+                Image("SelectDiff").resizable().aspectRatio(contentMode: .fit)
                 NavigationLink(
                     destination: EasyLevelsScreen(),
                     label: {
@@ -59,7 +59,7 @@ struct EasyMedHard: View {
                 .padding(.horizontal)
                 Spacer()
                 NavigationLink(
-                    destination: Text("Help Screen"),
+                    destination: HowToPlay(),
                     label: {
                         Text("How to Play")
                     })

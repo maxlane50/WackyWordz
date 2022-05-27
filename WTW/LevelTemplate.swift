@@ -311,10 +311,10 @@ struct LevelTemplate: View {
         }
     }
     func changeNumStars(){
-        if (stepsTaken > 5 && stepsTaken < 8){
+        if (stepsTaken > 4 && stepsTaken < 7){
             curNumStars = 2
         }
-        else if (stepsTaken > 7){
+        else if (stepsTaken > 6){
             curNumStars = 1
         }
     }
